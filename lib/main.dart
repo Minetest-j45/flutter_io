@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter IO'),
     );
   }
 }
@@ -45,11 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text("Hewwo"),
             TextButton(
               child: const Text('Write to file'),
-              onPressed: () {
-                print('e');
+              onPressed: () async {
                 //open storage file and write to it
-                //await Storage().writeText('Hello World');
-                //var text = await Storage().readText();
+                await Storage().writeText('Hello World');
+                var text = await Storage().readText();
+                print(text);
               },
             ),
           ],
