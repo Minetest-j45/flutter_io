@@ -42,19 +42,24 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text("Hewwo"),
+            const Text("Hello!"),
             TextButton(
               child: const Text('Write to file'),
               onPressed: () async {
                 //open storage file and write to it
                 await Storage().writeText('Hello World');
+              },
+            ),
+            TextButton(
+              child: const Text('Read from file'),
+              onPressed: () async {
                 var text = await Storage().readText();
                 print(text);
               },
             ),
           ],
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
@@ -82,12 +87,10 @@ class Storage {
     try {
       final file = await _localFile;
 
-      // Read the file
       final contents = await file.readAsString();
 
       return contents;
     } catch (e) {
-      // If encountering an error, return 0
       return '';
     }
   }
