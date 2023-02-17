@@ -1,6 +1,3 @@
-# flutter-codespaces
+# flutter_io
 
-```
-flutter create .
-flutter run  -d web-server --web-hostname=0.0.0.0 --web-port=3000
-```
+A mini-app I made in Flutter for the sole purpose of learning how to write and read to files, for me to use as a base for the future.
